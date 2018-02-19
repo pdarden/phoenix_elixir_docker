@@ -20,12 +20,12 @@ services:
     stdin_open: true
     volumes:
       - .:/app
-    command: ./run.sh
+    command: iex -S mix phx.server
     ports:
       - "4000:4000"
     depends_on:
       - db
-        #
+
 ### Named Volumes ###
 volumes:
   db_data:

@@ -63,6 +63,14 @@ config :<<my_app_name>>, <<MyAppName>>.Repo,
   hostname: System.get_env("POSTGRES_HOST"),
   pool_size: 10
 ```
+In `config/config.exs`:
+```
+# change this
+# url: [host: "localhost"],
+# to
+url: [host: System.get_env("POSTGRES_HOST")],
+```
+
 
 ## Up and Running
 ```
@@ -72,10 +80,6 @@ $ cd assets && yarn install && node node_modules/brunch/bin/brunch build
 * Setup the database for your project:
 ```
 $ mix ecto.create
-```
-* Make `run.sh` excutable:
-```
-$ chmod +x run.sh
 ```
 * Spinning up the rails server:
 ```
